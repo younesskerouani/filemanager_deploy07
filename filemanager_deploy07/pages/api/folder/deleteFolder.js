@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const targetDirectory = join(basePath, folderPath); 
 
     try {
-      await fs.promises.rmdir(targetDirectory, { recursive: true }); 
+      await fs.promises.rm(targetDirectory, { recursive: true }); 
       return res.status(200).json({ message: 'Folder deleted successfully' });
     } catch (error) {
       console.error(error);
