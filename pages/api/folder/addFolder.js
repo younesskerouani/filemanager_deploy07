@@ -13,8 +13,7 @@ export default async function handler(req, res) {
     const FolderDir = req.query.path || '';
     const fullPath = path.join(basePath, FolderDir);
     
-
-    const folderPath = `${fullPath}/${folderName}`;
+    const folderPath = path.join(fullPath, folderName);
     
     // Create the folder
     await fs.mkdir(folderPath);
