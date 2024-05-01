@@ -17,13 +17,17 @@ export default NextAuth({
         const { username, password } = credentials;
         
         // Read the users from the JSON file
-        const usersFilePath = path.join(process.env.AUTH_PATH, 'users.json');
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        // const usersFilePath = path.join(process.env.AUTH_PATH, 'users.json');
+        // const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
         // Find the user based on the provided username
-        const user = users.find(u => u.username === username);
+        // const user = users.find(u => u.username === username);
 
-        if (!user || user.password !== password) {
+        // if (!user || user.password !== password) {
+        //   throw new Error("Invalid credentials");
+        // }
+
+         if (username!== 'youness' || password !== "10203040") {
           throw new Error("Invalid credentials");
         }
         
